@@ -14,7 +14,7 @@ import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.subsystems.DriveTrain;
 import frc.robot.commands.DriveCommand; 
 
-/**
+/** 
  * This class is where the bulk of the robot should be declared. Since Command-based is a
  * "declarative" paradigm, very little robot logic should actually be handled in the {@link Robot}
  * periodic methods (other than the scheduler calls). Instead, the structure of the robot (including
@@ -25,15 +25,18 @@ public class RobotContainer {
 
   // SUBSYSTEMS
   private final ExampleSubsystem m_exampleSubsystem = new ExampleSubsystem();
-  public final static DriveTrain m_driveTrain = new DriveTrain(); 
+  public static final DriveTrain m_driveTrain = new DriveTrain(); 
 
   // COMMANDS
   private final ExampleCommand m_autoCommand = new ExampleCommand(m_exampleSubsystem);
+  // public static final DriveCommand m_driveCommand = new DriveCommand(m_driveTrain); 
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
     // Configure the button bindings
     configureButtonBindings();
+
+    m_driveTrain.setDefaultCommand(new DriveCommand());
   }
 
   /**
