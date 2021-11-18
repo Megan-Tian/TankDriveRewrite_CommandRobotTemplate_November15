@@ -18,7 +18,7 @@ public class DriveCommand extends CommandBase {
 
   public DriveCommand() {
     // Use addRequirements() here to declare subsystem dependencies.
-    this.leftJoy = new Joystick(RobotMap.LEFT_JOYSTICK);
+    this.leftJoy = new Joystick(RobotMap.LEFT_JOYSTICK); 
     this.rightJoy = new Joystick(RobotMap.RIGHT_JOYSTICK); 
 
     addRequirements(RobotContainer.m_driveTrain);
@@ -31,7 +31,10 @@ public class DriveCommand extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    
+    double leftSpeed = leftJoy.getRawAxis(RobotMap.LEFT_JOYSTICK);
+    double rightSpeed = rightJoy.getRawAxis(RobotMap.RIGHT_JOYSTICK);
+
+    RobotContainer.m_driveTrain.tankDrive(leftSpeed, rightSpeed);
   }
 
   // Called once the command ends or is interrupted.

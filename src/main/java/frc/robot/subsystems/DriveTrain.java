@@ -47,9 +47,7 @@ public class DriveTrain extends SubsystemBase {
 
     // create DifferentialDrive
     // takes two SpeedControllers 
-    this.drive = new DifferentialDrive(leftControllerGroup, rightControllerGroup); 
-
-    
+    this.drive = new DifferentialDrive(leftControllerGroup, rightControllerGroup);
   }
 
   // https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/drive/DifferentialDrive.html#:~:text=leftSpeed%2C%20double%C2%A0rightSpeed)-,Tank%20drive%20method%20for%20differential%20drive%20platform.,-void
